@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+            crossorigin="anonymous">
+    </script>
+    <style>
+        
+       
+
+    </style>
+</head>
+<body>
+    <p>
+        <input type="text">
+        <span></span>
+    </p>
+    <script>
+        $('input').focus(function(){
+            $(this).next('span').html('focus')
+        }).blur(function(){
+            $(this).next('span').html('blur')
+        }).change(function(e)[
+            console.log(e.target)/val()|
+            alert($(e.target).vla());
+        ]);
+
+        })
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <script>
+        function clickHandler(e){
+            alert('thank you');
+            
+        }
+
+        $(document).ready(function(){
+            console.log(1);
+            $('#click-me').bind('click', clickHandler);
+            $('#remove-event').bind('click', function(){
+                $('#click-me').unbind('click', clickHandler);
+            });
+            $("#trigger").bind('click', function(){
+                $('#click-me').trigger('click');
+            });
+        })
+    </script>
+
+    <input type="button" id="click-me" value="클릭버튼"/>
+    <input type="button" id="remove-event" value="언바인드"/>
+    <input type="button" id="trigger" value="트리거"/>
+</body>
+</html>

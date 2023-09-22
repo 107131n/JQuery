@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api 연습</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <h1>API 연습</h1>
+    <input id="search" type="text">
+    <button id="submit">검색</button>
+    <p></p>
+    <script>
+    $('#submit').click(function(){
+    $.ajax({
+        //서버로 보내는 요청
+        url: "https://dapi.kakao.com/v3/search/book?target=title&query=" + $('#search').val(),
+        method: "GET",
+        headers: {Authorization: "KakaoAK ef6e8adf373eacba2e51eceef0e6c046"}
+      }).done(function(data){
+        //서버로부터 받은 데이터
+        console.log(data.documents[0].title);
+        console.log(data.documents[0].contents);
+        console.log(data.documents[0].authors);
+        console.log(data.documents[0].publisher);
+        
+        $('body').append("<img src = " + data.documents[0].thumbnail + "/>" + "<br>");
+        $('body').append("<span>" + data.documents[0].title + "<span>" + "<br>");
+        $('body').append("<span>" + data.documents[0].contents + "<span>"+ "<br>");
+        $('body').append("<span>" + data.documents[0].authors + "<span>"+ "<br>");
+        
+    })
+})
+
+    </script>
+
+</body>
+</html>

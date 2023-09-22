@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element9</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+            crossorigin="anonymous">
+    </script>
+    <style>
+        
+        p{
+            margin: 6px;
+            font-size: 17px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+       .blue{
+            color: skyblue;
+       }
+       .highlight{
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+<body>
+    <p class="skyblue">click to toggle</p>
+    <p class="blue highlight">highlight</p>
+    <p class="blue">on these</p>
+    <p class="blue">paragraphs</p>
+    <script>
+        $('p').click(function(){
+            $(this).toggleClass('highlight');
+        })
+
+    </script>
+
+</body>
+</html>
